@@ -6,11 +6,11 @@ import Tom from "../assets/images/Tom.svg";
 
 export default function DescriptionBox() {
   return (
-    <section className="flex justify-center items-center h-[60vh]">
+    <section className="flex justify-center p-8 items-center h-[60vh]">
       <div className="flex justify-between ">
         <div className="flex w-[90%] flex-col items-start gap-4">
-          <p className="text-white font-DM text-[3rem] font-bold leading-[1.2] tracking-wider">
-            John Wick 3 : <br /> Parabellum
+          <p className="text-white font-DM lg:w-[39%] text-[2rem] md:text-[3rem] font-bold leading-[1.2] tracking-wider">
+            John Wick 3 :  Parabellum
           </p>
           <div className="flex gap-6">
             <div className="flex tems-center gap-[.625rem]">
@@ -22,7 +22,7 @@ export default function DescriptionBox() {
               <p className="text-white font-DM text-[.75rem]">97%</p>
             </div>{" "}
           </div>
-          <div className="w-[29.5%]">
+          <div className="lg:w-[29.5%]">
             <p className="text-white font-Dm text-[.875rem] font-medium leading-[1.3]">
               John Wick is on the run after killing a member of the
               international assassins' guild, and with a $14 million price tag

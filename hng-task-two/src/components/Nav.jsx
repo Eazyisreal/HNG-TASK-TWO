@@ -1,8 +1,8 @@
 import "../index.css";
 
 import Logo from "../assets/images/Logo.svg";
-import Menu from '../assets/images/Menu.svg';
-import Search from "../assets/images/Search.svg";
+import Menu from "../assets/images/Menu.svg";
+import Search from "./Search";
 
 export default function Nav() {
   return (
@@ -14,13 +14,12 @@ export default function Nav() {
             MovieBox
           </h1>
         </div>
-        <div className="hidden lg:flex w-[32.8125rem] py-[.375rem] px-[.625rem] justify-between items-center rounded-[.375rem] border-2 border-[#D1D5DB]">
-            <h3 className="text-white font-DM text-base">What do you want to watch?</h3>
-            <img src={Search} alt="" />
-        </div>
+        <Search />
         <div className="flex items-center gap-[1.6875rem]">
-            <h2 className="hidden md:block text-white font-DM text-base font-bold">Sign in</h2>
-            <img src={Menu} alt="" />
+          <h2 className="hidden md:block text-white font-DM text-base font-bold">
+            Sign in
+          </h2>
+          <img src={Menu} alt="" />
         </div>
       </div>
     </section>

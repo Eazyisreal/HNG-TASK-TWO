@@ -2,6 +2,7 @@ import "../index.css";
 import { useEffect, useState } from "react";
 import Arrow from "../assets/images/arrow_right.svg";
 import { fetchTopRatedMovies } from "../services/api";
+import { Link } from "react-router-dom"; // Import Link
 
 export default function FeaturedMovies() {
   const [movies, setMovies] = useState([]);
@@ -32,7 +33,7 @@ export default function FeaturedMovies() {
   };
 
   return (
-    <section className="flex flex-col justify-center items-center py-20">
+    <section id="movies" className="flex flex-col justify-center items-center py-20">
       <div className="flex w-[90%] items-center justify-between">
         <h1 className="text-black font-DM text-[1.5rem] md:text-[2.25rem] font-bold">
           Featured Movies
@@ -46,25 +47,41 @@ export default function FeaturedMovies() {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div  className="flex w-[90%] py-20 flex-col gap-[5rem]">
-          {Array.from({ length: Math.ceil(movies.length / 4) }).map((_, rowIndex) => (
-            <div key={rowIndex} data-testid='movie-card' className="flex flex-col md:flex-row items-start gap-[5rem]">
-              {movies.slice(rowIndex * 4, (rowIndex + 1) * 4).map((movie) => (
-                <div
-                  key={movie.id}
-                  className="flex flex-col items-start gap-[.75rem]"
-                >
-                  <img
-                  data-testid='movie-poster'
-                    src={constructPosterUrl(movie.poster_path)}
-                    alt={movie.title}
-                  />
-                  <p data-testid='movie-release-date'>{movie.release_date}</p>
-                  <p data-testid='movie-title' className="text-[#111827] font-DM  font-bold">{movie.title}</p>
-                </div>
-              ))}
-            </div>
-          ))}
+        <div className="flex w-[90%] py-20 flex-col gap-[5rem]">
+          {Array.from({ length: Math.ceil(movies.length / 4) }).map(
+            (_, rowIndex) => (
+              <div
+                key={rowIndex}
+                data-testid="movie-card"
+                className="flex flex-col md:flex-row items-start gap-[5rem]"
+              >
+                {movies.slice(rowIndex * 4, (rowIndex + 1) * 4).map((movie) => (
+                  <Link
+                    key={movie.id}
+                    to={`/movie/${movie.id}`} // Link to movie detail page
+                  >
+                    <div
+                      className="flex flex-col items-start gap-[.75rem]"
+                      data-testid="movie-item"
+                    >
+                      <img
+                        data-testid="movie-poster"
+                        src={constructPosterUrl(movie.poster_path)}
+                        alt={movie.title}
+                      />
+                      <p data-testid="movie-release-date">{movie.release_date}</p>
+                      <p
+                        data-testid="movie-title"
+                        className="text-[#111827] font-DM font-bold"
+                      >
+                        {movie.title}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )
+          )}
         </div>
       )}
     </section>

@@ -5,13 +5,11 @@ import Poster from "../assets/images/Poster.svg";
 export default function Header() {
   return (
     <section
-      className=" bg-cover  h-[75vh]"
+      className=" bg-cover h-[75vh]"
       style={{ backgroundImage: `url(${Poster})` }}
     >
-      <div className="wrapper">
-        <Nav />
-        <DescriptionBox />
-      </div>
+      <Nav />
+      <DescriptionBox />
     </section>
   );
 }

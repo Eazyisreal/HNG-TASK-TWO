@@ -6,7 +6,7 @@ import "../index.css";
 import Logo from "../assets/images/Logo.svg";
 import Home from "../assets/images/Home.svg";
 import Movie from "../assets/images/Movie.svg";
-import TV from "../assets/images/Tv.svg";
+import TV from "../assets/images/TV.svg";
 import Calendar from "../assets/images/Calendar.svg";
 import Logout from "../assets/images/Logout.svg";
 import Trailer from "../assets/images/Trailer.svg";
@@ -122,9 +122,9 @@ export default function Movies() {
             </div>
 
             <div>
-              <li className="flex gap-4  text-[#666] text-[1.25rem] font-semibold">
-                <img src={Logout} alt="" /> <p>Logout</p> text-base
-md:              </li>
+              <li className="flex gap-4  text-[#666] items-center text-[1.25rem] font-semibold">
+                <img src={Logout} alt="" /> <p>Logout</p>
+              </li>
             </div>
           </div>
         </section>

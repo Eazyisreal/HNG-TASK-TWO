@@ -1,8 +1,8 @@
 import "../index.css";
 import Facebook from "../assets/images/Facebook.svg";
-import Instagram from '../assets/images/Instagram.svg';
-import Twitter from '../assets/images/Twitter.svg';
-import Youtube from '../assets/images/Youtube.svg';
+import Instagram from "../assets/images/Instagram.svg";
+import Twitter from "../assets/images/Twitter.svg";
+import Youtube from "../assets/images/Youtube.svg";
 
 export default function Footer() {
   return (
@@ -22,11 +22,19 @@ export default function Footer() {
         </li>
       </ul>
       <ul className="flex flex-col md:flex-row items-start gap-12">
-          <li className="text-[#111827] font-DM text-[1.125rem] font-bold">Conditions of Use</li>
-          <li className="text-[#111827] font-DM text-[1.125rem] font-bold">Privacy & Policy</li>
-          <li className="text-[#111827] font-DM text-[1.125rem] font-bold">Press Room</li>
+        <li className="text-[#111827] font-DM text-[1.125rem] font-bold">
+          Conditions of Use
+        </li>
+        <li className="text-[#111827] font-DM text-[1.125rem] font-bold">
+          Privacy & Policy
+        </li>
+        <li className="text-[#111827] font-DM text-[1.125rem] font-bold">
+          Press Room
+        </li>
       </ul>
-      <p className="text-[#6b7280] font-DM text-[.85rem] md:text-[1.125rem] font-bold">© 2021 MovieBox by Adriana Eka Prayudha  </p>
+      <p className="text-[#6b7280] font-DM text-[.85rem] md:text-[1.125rem] font-bold">
+        © 2021 MovieBox by Adriana Eka Prayudha{" "}
+      </p>
     </footer>
   );
 }

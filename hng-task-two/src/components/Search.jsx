@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import Search from "../assets/images/search.svg";
+import Search from "../assets/images/Search.svg";
 
 export default function SearchBar({ onSearch }) {
   const [query, setQuery] = useState("");
@@ -33,8 +33,6 @@ export default function SearchBar({ onSearch }) {
     }
   };
 
-
-
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       handleSearch();
@@ -49,7 +47,7 @@ export default function SearchBar({ onSearch }) {
         className="text-white w-full font-DM text-base outline-none bg-transparent"
         value={query}
         onChange={handleInputChange}
-        onKeyPress={handleKeyPress} 
+        onKeyPress={handleKeyPress}
       />
       <button onClick={handleSearch}>
         <img src={Search} alt="Search" />

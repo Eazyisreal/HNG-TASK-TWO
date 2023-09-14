@@ -10,7 +10,7 @@ export default function DescriptionBox() {
       <div className="flex justify-between ">
         <div className="flex w-[90%] flex-col items-start gap-4">
           <p className="text-white font-DM lg:w-[39%] text-[2rem] md:text-[3rem] font-bold leading-[1.2] tracking-wider">
-            John Wick 3 :  Parabellum
+            John Wick 3 : Parabellum
           </p>
           <div className="flex gap-6">
             <div className="flex tems-center gap-[.625rem]">
@@ -37,12 +37,18 @@ export default function DescriptionBox() {
           </button>
         </div>
         <div className=" flex items-center justify-center">
-            <ul className="flex flex-col items-center gap-[.625rem]">
-                <li className="text-[#9ca3af] font-DM text-[.75rem] font-bold">1</li>
-                <li className="text-[#9ca3af] font-DM text-[.75rem] font-bold">2</li>
-                <li className="text-white font-DM text-[.75rem] font-bold">- 3</li>
-                <li className="text-[#9ca3af] font-DM text-[.75rem] font-bold">4</li>
-            </ul>
+          <ul className="flex flex-col items-center gap-[.625rem]">
+            <li className="text-[#9ca3af] font-DM text-[.75rem] font-bold">
+              1
+            </li>
+            <li className="text-[#9ca3af] font-DM text-[.75rem] font-bold">
+              2
+            </li>
+            <li className="text-white font-DM text-[.75rem] font-bold">- 3</li>
+            <li className="text-[#9ca3af] font-DM text-[.75rem] font-bold">
+              4
+            </li>
+          </ul>
         </div>
       </div>
     </section>

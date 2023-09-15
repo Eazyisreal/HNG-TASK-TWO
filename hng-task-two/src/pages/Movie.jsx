@@ -169,7 +169,7 @@ export default function Movies() {
                   data-testid="movie-runtime"
                   className="font-poppins text-[#404040] text-base md:text-[1.4375rem] font-medium"
                 >
-                  {movieDetails.runtime} minutes
+                  {movieDetails.runtime}
                 </p>
               </div>
             </div>

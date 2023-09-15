@@ -55,7 +55,7 @@ export default function SearchBar() {
         <img src={Search} alt="Search" />
       </button>
       {loading && <LoadingSpinner /> }
-      <div className="max-h-[600px] absolute top-20 snap-scroll-y-mandatory overflow-y-auto">
+      <div className="max-h-[400px] absolute top-20 snap-scroll-y-mandatory overflow-y-auto">
         {searchResults.length > 0 && (
           <div className="">
             {searchResults.map((result) => (
@@ -65,7 +65,7 @@ export default function SearchBar() {
                 className="flex flex-col items-start gap-[0.625rem]"
               >
                 <img
-                  src={`https://image.tmdb.org/t/p/w500${result.poster_path}`}
+                  src={`https://image.tmdb.org/t/p/w400${result.poster_path}`}
                   alt={result.title}
                 />
                 <p className="text-white font-DM font-bold text-lg">

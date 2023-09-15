@@ -4,6 +4,7 @@ import Arrow from "../assets/images/arrow_right.svg";
 import { fetchTopRatedMovies } from "../services/api";
 import { Link } from "react-router-dom"; 
 import LoadingSpinner from "./LoadingSpinner"; 
+import Favorite from '../assets/images/Favorite.svg';
 
 
 export default function FeaturedMovies() {
@@ -63,7 +64,7 @@ export default function FeaturedMovies() {
                     to={`/movie/${movie.id}`} // Link to movie detail page
                   >
                     <div
-                      className="flex flex-col items-start gap-[.75rem]"
+                      className="flex flex-col items-start gap-[.75rem] relative"
                       data-testid="movie-item"
                     >
                       <img
@@ -71,6 +72,12 @@ export default function FeaturedMovies() {
                         src={constructPosterUrl(movie.poster_path)}
                         alt={movie.title}
                       />
+                      <div className="flex absolute p-2 justify-between w-full items-center">
+                        <div className="flex py-[.1875rem] px-[.5rem] rounded-[.75rem] bg-[#f3f4f6] bg-opacity-50">
+                          <p className="text-[#111827] font-DM text-[.75rem] text-bold">Top rated</p>
+                        </div>
+                        <img src={Favorite} alt="" />
+                      </div>
                       <p data-testid="movie-release-date">{movie.release_date}</p>
                       <p
                         data-testid="movie-title"

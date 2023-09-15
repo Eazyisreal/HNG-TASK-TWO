@@ -10,6 +10,7 @@ import TV from "../assets/images/TV.svg";
 import Calendar from "../assets/images/Calendar.svg";
 import Logout from "../assets/images/Logout.svg";
 import Trailer from "../assets/images/Trailer.svg";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const Navlinks = [
   {
@@ -88,7 +89,7 @@ export default function Movies() {
         <section className="bg-white  border border-black rounded-r-[2.8125rem] w-[14.125rem] h-full">
           <div className="flex flex-col gap-12 py-12 px-3 items-center">
             <Link to="/">
-              <div className="flex items-center gap-2 md:gap-6">
+              <div className="flex items-center gap-2 ">
                 <img src={Logo} alt="" />
                 <h1 className="text-[#333] font-DM font-bold md:text-[1.5rem] leading-[1.2]">
                   MovieBox
@@ -131,7 +132,7 @@ export default function Movies() {
       </div>
       <div className="main">
         {loading ? (
-          <p>Loading...</p>
+         <LoadingSpinner /> 
         ) : (
           <div className="md:p-12 p-4 flex flex-col gap-8 rounded-[.625rem]">
             <div
@@ -143,7 +144,7 @@ export default function Movies() {
               }}
             >
               <img
-                className="w-1/4 absolute lg:top-[15%] lg:left-[50%] md:top-[20%] md:left-[40%] top-[30%] left-[40%]"
+                className="md:w-[12rem] w-[10rem] absolute lg:top-[15%] lg:left-[50%] md:top-[20%] md:left-[40%]  top-[20%] left-[40%]"
                 src={Trailer}
                 alt=""
               />

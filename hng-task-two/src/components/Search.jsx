@@ -1,8 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
 import Search from "../assets/images/Search.svg";
+import { Link } from 'react-router-dom';
+import LoadingSpinner from "./LoadingSpinner"; 
 
-export default function SearchBar({ onSearch }) {
+export default function SearchBar() {
   const [query, setQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -26,7 +28,7 @@ export default function SearchBar({ onSearch }) {
 
       setSearchResults(response.data.results);
       setLoading(false);
-      onSearch(response.data.results);
+      console.log(response.data.results);
     } catch (error) {
       console.error("Error fetching search results:", error);
       setLoading(false);
@@ -52,28 +54,31 @@ export default function SearchBar({ onSearch }) {
       <button onClick={handleSearch}>
         <img src={Search} alt="Search" />
       </button>
-      {loading && <p className="text-white mt-2">Loading...</p>}
-      {searchResults.length > 0 && (
-        <div className="absolute top-20 flex flex-col gap-12 mt-2">
-          {searchResults.map((result) => (
-            <div
-              key={result.id}
-              className="flex flex-col items-start gap-[0.625rem]"
-            >
-              <img
-                src={`https://image.tmdb.org/t/p/w500${result.poster_path}`}
-                alt={result.title}
-              />
-              <p className="text-white font-DM font-bold text-lg">
-                {result.title}
-              </p>
-              <p className="text-white text-[0.85rem]">
-                Release Date: {result.release_date}
-              </p>
-            </div>
-          ))}
-        </div>
-      )}
+      {loading && <LoadingSpinner /> }
+      <div className="max-h-[600px] absolute top-20 snap-scroll-y-mandatory overflow-y-auto">
+        {searchResults.length > 0 && (
+          <div className="">
+            {searchResults.map((result) => (
+              <Link
+                to={`/movie/${result.id}`}
+                key={result.id}
+                className="flex flex-col items-start gap-[0.625rem]"
+              >
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${result.poster_path}`}
+                  alt={result.title}
+                />
+                <p className="text-white font-DM font-bold text-lg">
+                  {result.title}
+                </p>
+                <p className="text-white text-[0.85rem]">
+                  Release Date: {result.release_date}
+                </p>
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

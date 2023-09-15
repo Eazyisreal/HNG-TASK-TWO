@@ -6,9 +6,9 @@ import Tom from "../assets/images/Tom.svg";
 
 export default function DescriptionBox() {
   return (
-    <section className="flex justify-center p-8 items-center h-[60vh]">
-      <div className="flex justify-between ">
-        <div className="flex w-[90%] flex-col items-start gap-4">
+    <section className="flex justify-center  md:p-8 items-center h-[60vh]">
+      <div className="flex w-[90%] justify-between ">
+        <div className="flex  flex-col items-start gap-4">
           <p className="text-white font-DM lg:w-[39%] text-[2rem] md:text-[3rem] font-bold leading-[1.2] tracking-wider">
             John Wick 3 : Parabellum
           </p>
@@ -36,7 +36,7 @@ export default function DescriptionBox() {
             </p>
           </button>
         </div>
-        <div className=" flex items-center justify-center">
+        <div className=" md:flex items-center  hidden justify-center">
           <ul className="flex flex-col items-center gap-[.625rem]">
             <li className="text-[#9ca3af] font-DM text-[.75rem] font-bold">
               1

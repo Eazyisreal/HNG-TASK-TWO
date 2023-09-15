@@ -2,7 +2,9 @@ import "../index.css";
 import { useEffect, useState } from "react";
 import Arrow from "../assets/images/arrow_right.svg";
 import { fetchTopRatedMovies } from "../services/api";
-import { Link } from "react-router-dom"; // Import Link
+import { Link } from "react-router-dom"; 
+import LoadingSpinner from "./LoadingSpinner"; 
+
 
 export default function FeaturedMovies() {
   const [movies, setMovies] = useState([]);
@@ -45,7 +47,7 @@ export default function FeaturedMovies() {
       </div>
 
       {loading ? (
-        <p>Loading...</p>
+      <LoadingSpinner /> 
       ) : (
         <div className="flex w-[90%] py-20 flex-col gap-[5rem]">
           {Array.from({ length: Math.ceil(movies.length / 4) }).map(
